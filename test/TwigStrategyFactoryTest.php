@@ -1,11 +1,11 @@
 <?php
 
-namespace Spiffy\View;
+namespace Spiffy\Mvc\Twig;
 
 use Spiffy\Inject\Injector;
 
 /**
- * @coversDefaultClass \Spiffy\View\TwigStrategyFactory
+ * @coversDefaultClass \Spiffy\Mvc\Twig\TwigStrategyFactory
  */
 class TwigStrategyFactoryTest extends \PHPUnit_Framework_TestCase
 {
@@ -14,21 +14,12 @@ class TwigStrategyFactoryTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateService()
     {
+        $f = new TwigStrategyFactory();
         $i = new Injector();
-        $i['spiffy.mvc'] = [
-            'view_manager' => [
-                'twig' => [
-                    'loader_paths' => [],
-                    'options' => []
-                ]
-            ]
-        ];
+        $i->nject('Twig_Environment', new \Twig_Environment());
 
-        $df = new TwigStrategyFactory();
+        $result = $f->createService($i);
 
-        /** @var \Spiffy\Mvc\View\TwigStrategy $result */
-        $result = $df->createService($i);
-
-        $this->assertInstanceOf('Spiffy\Mvc\View\TwigStrategy', $result);
+        $this->assertInstanceOf('Spiffy\View\Twig\TwigStrategy', $result);
     }
 }

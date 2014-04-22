@@ -9,7 +9,14 @@
     "description": "Spiffy\\Mvc\\Twig is a package for SpiffyFramework that helps you manage your assets.",
     "require": {
         "php": ">=5.4",
-        "spiffy/spiffy-mvc": "~1.0-dev"
+        "spiffy/spiffy-dispatch": "~1.0-dev",
+        "spiffy/spiffy-event": "~1.0-dev",
+        "spiffy/spiffy-inject": "~1.0-dev",
+        "spiffy/spiffy-mvc": "~1.0-dev",
+        "spiffy/spiffy-package": "~1.0-dev",
+        "spiffy/spiffy-route": "~1.0-dev",
+        "spiffy/spiffy-view": "~1.0-dev",
+        "spiffy/spiffy-view-twig": "~1.0-dev"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0",
@@ -17,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Spiffy\\Mvc\\": [
+            "Spiffy\\Mvc\\Twig\\": [
                 "src/",
                 "test/"
             ]
