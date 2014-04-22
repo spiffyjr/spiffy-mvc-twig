@@ -1,8 +1,8 @@
 # Spiffy\Mvc (Twig)
 
 [![Build Status](https://travis-ci.org/spiffyjr/spiffy-mvc-twig.svg)](https://travis-ci.org/spiffyjr/spiffy-mvc-twig)
-[![Code Coverage](https://scrutinizer-ci.com/g/spiffyjr/spiffy-mvc-twig/badges/coverage.png?s=3f606f26f25597e7e41b36a35f23810754f8e34d)](https://scrutinizer-ci.com/g/spiffyjr/spiffy-mvc-twig/)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spiffyjr/spiffy-mvc-twig/badges/quality-score.png?s=f12c6af7ffc9a2d6da6ddec32c2953f3685c7fc7)](https://scrutinizer-ci.com/g/spiffyjr/spiffy-mvc-twig/)
+[![Code Coverage](https://scrutinizer-ci.com/g/spiffyjr/spiffy-mvc-twig/badges/coverage.png?s=6ce28c8becde1908d82ece6877aa1312ed27052e)](https://scrutinizer-ci.com/g/spiffyjr/spiffy-mvc-twig/)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spiffyjr/spiffy-mvc-twig/badges/quality-score.png?s=0e00ec07c4c6b576997206895e6573d60bf77456)](https://scrutinizer-ci.com/g/spiffyjr/spiffy-mvc-twig/)
 
 ## Installation
 
