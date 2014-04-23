@@ -14,13 +14,13 @@ class TwigExtensionLoader implements Listener
      */
     public function attach(Manager $events)
     {
-        $events->on(MvcEvent::EVENT_BOOTSTRAP, [$this, 'onBootstrap']);
+        $events->on(MvcEvent::EVENT_BOOTSTRAP, [$this, 'loadExtensions']);
     }
 
     /**
      * @param MvcEvent $e
      */
-    public function onBootstrap(MvcEvent $e)
+    public function loadExtensions(MvcEvent $e)
     {
         $app = $e->getApplication();
         $i = $app->getInjector();
