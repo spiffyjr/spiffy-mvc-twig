@@ -36,7 +36,7 @@ class ClearCacheCommand extends ConsoleCommand
             return 1;
         }
 
-        $output->writeln(sprintf('Removing <info>%s</info>', $config['options']['cache']));
+        $output->writeln(sprintf('Removing cache at <info>%s</info>', realpath($config['options']['cache'])));
         $this->remove($config['options']['cache']);
         $output->writeln('Complete');
 
