@@ -24,7 +24,7 @@ class ClearCacheCommand extends ConsoleCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $i = $this->getInjector();
-        $config = $i['spiffy.mvc.twig'];
+        $config = $i['mvc.twig'];
         $debug = isset($config['options']['debug']) && $config['options']['debug'] ? 'on' : 'off';
 
         $output->writeln('Clearing twig cache');

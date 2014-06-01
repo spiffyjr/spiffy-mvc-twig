@@ -2,17 +2,18 @@
 
 namespace Spiffy\Mvc\Twig;
 
-use Spiffy\Event\Listener;
+use Spiffy\Event\Plugin;
 use Spiffy\Event\Manager;
+use Spiffy\Inject\InjectorUtils;
 use Spiffy\Mvc\MvcEvent;
 
-class TwigExtensionLoader implements Listener
+class TwigExtensionLoader implements Plugin
 {
     /**
      * @param Manager $events
      * @return void
      */
-    public function attach(Manager $events)
+    public function plug(Manager $events)
     {
         $events->on(MvcEvent::EVENT_BOOTSTRAP, [$this, 'loadExtensions']);
     }
@@ -24,10 +25,10 @@ class TwigExtensionLoader implements Listener
     {
         $app = $e->getApplication();
         $i = $app->getInjector();
-        $config = $i['spiffy.mvc.twig'];
+        $config = $i['mvc.twig'];
 
         /** @var \Twig_Environment $twig */
-        $twig = $i->nvoke('Twig_Environment');
+        $twig = $i->nvoke('twig');
 
         $extensions = isset($config['extensions']) ? $config['extensions'] : [];
         foreach ($extensions as $name => &$extension) {
@@ -36,11 +37,7 @@ class TwigExtensionLoader implements Listener
                 continue;
             }
 
-            if (is_string($extension)) {
-                $extension = $i->has($extension) ? $i->nvoke($extension) : new $extension();
-            }
-
-            $twig->addExtension($extension);
+            $twig->addExtension(InjectorUtils::get($i, $extension));
         }
     }
 }

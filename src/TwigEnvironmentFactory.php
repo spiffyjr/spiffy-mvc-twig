@@ -14,7 +14,7 @@ class TwigEnvironmentFactory implements ServiceFactory
      */
     public function createService(Injector $i)
     {
-        $options = $i['spiffy.mvc.twig'];
+        $options = $i['mvc.twig'];
 
         // Reverse loader_path from package load order so that Twig inherits properly.
         $options['loader_paths'] = array_reverse($options['loader_paths']);

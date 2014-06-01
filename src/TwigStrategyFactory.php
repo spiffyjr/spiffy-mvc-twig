@@ -15,7 +15,7 @@ class TwigStrategyFactory implements ServiceFactory
      */
     public function createService(Injector $i)
     {
-        $twig = $i->nvoke('Twig_Environment');
+        $twig = $i->nvoke('twig');
         $factory = new BaseTwigStrategyFactory();
 
         return $factory->createService($twig);

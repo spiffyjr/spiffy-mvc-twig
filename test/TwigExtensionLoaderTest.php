@@ -61,7 +61,7 @@ class TwigExtensionLoaderTest extends \PHPUnit_Framework_TestCase
         $l = $this->l;
 
         $i = $e->getApplication()->getInjector();
-        $i['spiffy.mvc.twig'] = [
+        $i['mvc.twig'] = [
             'extensions' => [
                 'empty' => null
             ]
@@ -84,7 +84,7 @@ class TwigExtensionLoaderTest extends \PHPUnit_Framework_TestCase
 
         $i = $e->getApplication()->getInjector();
         $i->nject('extension', 'Spiffy\View\Twig\TestAsset\TestTwigExtension');
-        $i['spiffy.mvc.twig'] = [
+        $i['mvc.twig'] = [
             'extensions' => [
                 'test' => 'Spiffy\View\Twig\TestAsset\TestTwigExtension',
                 'injector' => 'extension'
@@ -104,7 +104,7 @@ class TwigExtensionLoaderTest extends \PHPUnit_Framework_TestCase
         $app = new Application();
         $i = $app->getInjector();
         $i->nject('Twig_Environment', new \Twig_Environment(new \Twig_Loader_String()));
-        $i['spiffy.mvc.twig'] = [];
+        $i['mvc.twig'] = [];
 
         $this->e = new MvcEvent($app);
         $this->l = new TwigExtensionLoader();

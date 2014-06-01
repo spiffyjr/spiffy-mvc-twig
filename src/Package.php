@@ -2,19 +2,8 @@
 
 namespace Spiffy\Mvc\Twig;
 
-use Spiffy\Package\Feature\ConfigProvider;
-use Spiffy\Package\Feature\OptionsProvider;
-use Spiffy\Package\Feature\OptionsProviderTrait;
+use Spiffy\Mvc\AbstractMvcPackage;
 
-class Package implements ConfigProvider, OptionsProvider
+class Package extends AbstractMvcPackage
 {
-    use OptionsProviderTrait;
-
-    /**
-     * @return array
-     */
-    public function getConfig()
-    {
-        return include __DIR__ . '/../config/config.php';
-    }
 }

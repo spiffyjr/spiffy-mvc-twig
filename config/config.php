@@ -1,25 +1,15 @@
 <?php
 
 return [
-    'spiffy.mvc' => [
-        'plugins' => [
-            'Spiffy\Mvc\Twig\TwigExtensionLoader'
-        ],
-        'services' => [
-            'Spiffy\\View\\TwigStrategy' => 'Spiffy\\Mvc\\Twig\\TwigStrategyFactory',
-            'Twig_Environment' => 'Spiffy\\Mvc\\Twig\\TwigEnvironmentFactory',
-        ],
-        'view_manager' => [
-            'default_strategy' => 'Spiffy\\View\\TwigStrategy',
-        ],
+    'mvc' => [
+        'plugins' => ['Spiffy\Mvc\Twig\TwigExtensionLoader'],
+        'view_manager' => ['default_strategy' => 'spiffy.view.twig-strategy'],
     ],
-    'spiffy.mvc.twig' => [
+    'mvc.twig' => [
         'suffix' => '.twig',
-        'loader_paths' => [
-            'spiffy.mvc.twig' => __DIR__ . '/../view'
-        ],
+        'loader_paths' => ['mvc.twig' => __DIR__ . '/../view'],
         'options' => [
-            'cache' => isset($_ENV['debug']) && $_ENV['debug'] ? null : 'cache',
+            'cache' => (isset($_ENV['debug']) && $_ENV['debug']) ? null : 'cache/twig',
             'debug' => isset($_ENV['debug']) ? $_ENV['debug'] : false,
         ]
     ]

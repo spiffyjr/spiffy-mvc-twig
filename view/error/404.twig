@@ -18,7 +18,7 @@
         </p>
         <pre>
                 return [
-                    'spiffy.mvc' => [
+                    'mvc' => [
                         'controllers' => [
                             // The value below should point to the fully qualified class name of your controller.
                             '{{ controller }}' => <strong>'Verify\Controller\Is\Correct'</strong>
@@ -38,7 +38,7 @@
         </p>
         <pre>
                 return [
-                    'spiffy.mvc' => [
+                    'mvc' => [
                         'routes' => [
                             // {{ action }} does not exist on {{ controller }}.
                             'home' => ['/', '{{ controller }}', '{{ action }}'],
@@ -58,7 +58,7 @@
         </p>
         <pre>
                 return [
-                    'spiffy.mvc' => [
+                    'mvc' => [
                         'routes' => [
                             'home' => ['/', 'home'],
                             'article' => ['/article/{id:\d+}{-slug?}', 'article', 'view']

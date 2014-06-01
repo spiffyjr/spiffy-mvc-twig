@@ -19,7 +19,7 @@ class TwigEnvironmentFactoryTest extends \PHPUnit_Framework_TestCase
     {
         $f = new TwigEnvironmentFactory();
         $i = new Injector();
-        $i['spiffy.mvc.twig'] = [
+        $i['mvc.twig'] = [
             'loader_paths' => [
                 realpath(__DIR__),
                 realpath(__DIR__ . '/../')
@@ -40,6 +40,6 @@ class TwigEnvironmentFactoryTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('Twig_Loader_Filesystem', $loader);
 
         $paths = $loader->getPaths();
-        $this->assertSame(array_reverse($i['spiffy.mvc.twig']['loader_paths']), $paths);
+        $this->assertSame(array_reverse($i['mvc.twig']['loader_paths']), $paths);
     }
 }

@@ -52,7 +52,7 @@ class ClearCacheCommandTest extends \PHPUnit_Framework_TestCase
         $this->assertFileExists($cache . '/parent/child/child2.php');
 
         $i = new Injector();
-        $i['spiffy.mvc.twig'] = [
+        $i['mvc.twig'] = [
             'options' => [
                 'cache' => $cache
             ]
@@ -78,7 +78,7 @@ class ClearCacheCommandTest extends \PHPUnit_Framework_TestCase
     public function testCommandWithDebugOn()
     {
         $i = new Injector();
-        $i['spiffy.mvc.twig'] = [
+        $i['mvc.twig'] = [
             'options' => [
                 'debug' => true
             ]
